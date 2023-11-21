@@ -1,0 +1,265 @@
+:root {
+    --bgColor: #353A40;
+    --textColor: white;
+    --buttonColor: #29A744;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+header {
+    background-color: var(--bgColor);
+    height: 4.2em;
+    color: var(--textColor);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+
+    .logo {
+        display: inline-block;
+        margin-left: 1.5em;
+
+        & img {
+            height: 4em;
+            vertical-align: middle;
+        }
+
+        & h2 {
+            display: inline-block;
+        }
+    }
+
+    & nav {
+        float: right;
+        padding: 1em 2em;
+
+        & a {
+            text-decoration: none;
+            color: var(--textcolor);
+            margin: 0 .5em;
+        }
+
+        .ticketColor {
+            color: var(--buttonColor)
+        }
+    }
+}
+
+main {
+    .principal {
+        position: relative;
+
+        & img {
+            filter: brightness(0.5);
+            width: 100%;
+        }
+
+        .contentPrincipal {
+            width: 40%;
+            position: absolute;
+            top: 50vh;
+            color: var(--textColor);
+            text-align: right;
+            font-size: x-large;
+            right: 4em;
+            line-height: 1.5em;
+
+            & p {
+                margin: 1.5em 0;
+            }
+
+            & a {
+                border: 1px solid var(--textColor);
+                border-radius: 5px;
+                text-decoration: none;
+                color: var(--textColor);
+                padding: 15px 20px;
+                margin: 0 1em;
+            }
+
+            .ticketBtn {
+                background-color: var(--buttonColor);
+                border: 1px solid var(--buttonColor);
+                padding: 15px;
+            }
+        }
+    }
+}
+
+.grid-content {
+    .title {
+        text-align: center;
+        margin: 1em;
+
+        & h1 {
+            margin: 0.3em;
+        }
+
+        & h4 {
+            font-size: small;
+
+        }
+
+        & p {
+            font-size: small;
+            font-style: oblique;
+        }
+    }
+
+
+    display: grid;
+    grid-template-areas: 'orador orador'
+    'paisaje descripcion'
+    'formulario formulario';
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto auto;
+
+    & div[class^='item'] {
+        border: 1px solid rgb(255, 255, 255);
+    }
+
+    .item-1 {
+        grid-area: orador;
+
+        .contentCard {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            font-size: lerge;
+
+            & div[class^='card'] {
+                border: 1px solid black;
+                width: 20%;
+
+                & img {
+                    width: 100%;
+                }
+
+                & a {
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-size: 15px;
+                    padding: 2px 5px;
+                    margin: 1px;
+                }
+
+                .btnJava {
+                    color: black;
+                    background-color: rgb(250, 197, 106);
+                }
+
+                .btnReact {
+                    color: white;
+                    background-color: rgb(106, 183, 250);
+                }
+
+                .btnNego {
+                    color: white;
+                    background-color: grey;
+                }
+
+                .btnStart {
+                    color: white;
+                    background-color: red;
+                }
+
+            }
+        }
+    }
+
+    .item-2 {
+        grid-area: paisaje;
+        margin: 20px 1px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .item-3 {
+        grid-area: descripcion;
+        background-color: var(--bgColor);
+        color: var(--textColor);
+        padding: 1em;
+        font-size: x-large;
+        margin: 20px 1px;
+
+        & p {
+            margin: 1.5em 0;
+        }
+
+        & a {
+            border: 1px solid var(--textColor);
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--textColor);
+            padding: 10px 20px;
+        }
+    }
+
+    .item-4 {
+        grid-area: formulario;
+
+        .contentCard {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: baseline;
+            padding-bottom: 20px;
+        }
+
+        .form1 {
+            padding: 15px;
+            margin-left: 15px;
+        }
+
+        .form2 {
+            display: flex;
+            align-items: stretch;
+            flex-direction: column;
+
+            & p {
+                font-size: small;
+                font-style: oblique;
+                text-align: center;
+                padding: 5px;
+            }
+
+            .formBtn {
+                color: var(--textColor);
+                font-size: large;
+                background-color: var(--buttonColor);
+                border-radius: 5px;
+                border-color: var(--buttonColor);
+                padding: 5px;
+            }
+        }
+    }
+}
+
+footer {
+    text-align:center;
+    background: linear-gradient(to right, rgb(1, 25, 52), rgb(8, 51, 100), rgb(37, 86, 143), rgb(43, 113, 182));
+    height: 50px;
+    color: var(--textColor);
+    width: 100%;
+    
+
+    & a {
+        font-size: large;
+        text-decoration: none;
+        color: var(--textcolor);
+        margin: 50px;
+    }
+}
